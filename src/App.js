@@ -1,17 +1,7 @@
 import React, { Component } from 'react';
 import TOC from './components/TOC.js';
+import Subject from './components/Subject.js';
 import './App.css';
-
-class Subject extends Component{
-  render() {
-    return (
-      <header>
-        <h1>{this.props.title}</h1>
-        {this.props.sub}
-      </header>
-    );
-  }
-}
 class Content extends Component{
   render(){
     return(
