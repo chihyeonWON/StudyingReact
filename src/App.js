@@ -41,6 +41,7 @@ class App extends Component{
     return (
       <div className="App">
         <Subject title="WEB" sub="world wide web!"></Subject> 
+        <Subject title="React" sub="For UI"></Subject> 
         <TOC></TOC>
         <Content></Content>
       </div>
