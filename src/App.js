@@ -33,7 +33,9 @@ class App extends Component{
           sub={this.state.subject.sub}>
         </Subject> */}
         <header>
-          <h1><a href="/">{this.state.subject.title}</a></h1>
+          <h1><a href="/" onClick={function(){
+            alert('hi');
+          }}>{this.state.subject.title}</a></h1>
           {this.state.subject.sub}
         </header>
         <TOC data={this.state.contents}></TOC>
