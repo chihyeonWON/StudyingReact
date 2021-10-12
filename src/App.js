@@ -5,11 +5,16 @@ import Content from './components/Content.js';
 import './App.css';
 class App extends Component{ 
   constructor(props) {
-    super(props);
+   super(props);
     this.state = {
-      subject:{title:'WEB', sub:'World Wide Web!'}  
-    }
-  }
+      subject:{title:'WEB', sub:'World Wide Web!'},
+      contents:[
+       {id:1, title:'HTML', desc:'HTML is for information'},
+       {id:2, title:'CSS is for design', desc:'CSS is for design'},
+       {id:3, title:'JavaScript', desc:'JavaScript is for interactive'}
+      ]
+   } 
+ }
   render() {
     return (
       <div className="App">
