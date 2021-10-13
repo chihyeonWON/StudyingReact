@@ -8,6 +8,7 @@ class App extends Component{
    super(props);
     this.state = {
       mode:'read',
+      selected_content_id: 2,
       subject:{title:'WEB', sub:'World Wide Web!'},
       welcome:{title:'Welcome', desc:'Hello, React!!'},
       contents:[
