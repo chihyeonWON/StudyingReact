@@ -33,7 +33,7 @@ class App extends Component{
           sub={this.state.subject.sub}
           onChangePage = {
             function(){
-              alert('hihihi');
+              this.setState({ mode:'welcome' }); 
             }.bind(this)}
         >
         </Subject>
