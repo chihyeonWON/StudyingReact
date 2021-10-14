@@ -3,8 +3,8 @@ class Control extends Component{
   render() {
     return (
       <ul>
-            <li><a href="/create" onClick = {function(e) {
-                e.preventDefalut();
+            <li><a href="/create" onClick={function(e) {
+                e.preventDefault();
                 this.props.onChangeMode('create');
             }.bind(this)}>create</a></li>
             <li><a href="/update" onClick = {function(e) {
