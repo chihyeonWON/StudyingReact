@@ -51,7 +51,7 @@ class App extends Component{
             function(id) {
               this.setState({
                  mode:'read',
-                 selected_content_id : Number(id)
+                 selected_content_id : 1
               });
             }.bind(this)
           } 
