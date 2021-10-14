@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Subject from './components/Subject.js';
 import TOC from './components/TOC.js';
-import Content from './components/Content.js';
+import ReadContent from './components/ReadContent.js';
 import Control from './components/Control.js';
 import './App.css';
 class App extends Component{ 
@@ -60,7 +60,7 @@ class App extends Component{
         <Control onChangeMode = {function(_mode){
           this.setState({ mode:_mode });
         }.bind(this)}></Control>
-        <Content title={_title} desc={_desc}></Content>
+        <ReadContent title={_title} desc={_desc}></ReadContent>
       </div>
     );
   }
