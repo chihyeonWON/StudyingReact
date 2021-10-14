@@ -62,7 +62,7 @@ class App extends Component{
             this.setState({
               mode:_mode
           });
-        }.bind(this`)}></Control>
+        }.bind(this)}></Control>
         <Content title={_title} desc={_desc}></Content>
       </div>
     );
