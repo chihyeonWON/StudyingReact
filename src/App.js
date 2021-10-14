@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Subject from './components/Subject.js';
 import TOC from './components/TOC.js';
 import Content from './components/Content.js';
+import Control from './components/Control.js';
 import './App.css';
 class App extends Component{ 
   constructor(props) {
@@ -56,11 +57,7 @@ class App extends Component{
             }.bind(this)
           } 
           data={this.state.contents}></TOC>
-          <ul>
-            <li><a href="/create">create</a></li>
-            <li><a href="/update">update</a></li>
-            <li><input type="button"></input></li>
-          </ul>
+        <Control></Control>
         <Content title={_title} desc={_desc}></Content>
       </div>
     );
