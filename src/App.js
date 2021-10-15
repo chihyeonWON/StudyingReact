@@ -20,10 +20,11 @@ class App extends Component{
    } 
  }
   render() {
-    var _title, _desc = null;
+    var _title, _desc, _article = null;
     if(this.state.mode === 'welcome') {
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
+      _article = <ReadContent title={_title} desc = {_desc}></ReadContent>
     } else if (this.state.mode === 'read') {
       var i = 0;
       while(i < this.state.contents.length) {
@@ -35,6 +36,7 @@ class App extends Component{
         }
         i += 1;
       }
+      <ReadContent title={_title} desc = {_desc}></ReadContent>
     }
     return (
       <div className="App">
@@ -60,7 +62,7 @@ class App extends Component{
         <Control onChangeMode = {function(_mode){
           this.setState({ mode:_mode });
         }.bind(this)}></Control>
-        <ReadContent title={_title} desc={_desc}></ReadContent>
+        {_article}
       </div>
     );
   }
