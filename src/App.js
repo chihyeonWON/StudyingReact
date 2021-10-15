@@ -48,6 +48,7 @@ class App extends Component{
           this.setState({
             contents:this.state.contents
           })*/ 
+          //concat 함수는 인자의 내용을 _contents에 추가할 뿐 this.state.contents 본문의 내용에는 영향을 주지않는다.
           var _contents = this.state.contents.concat(
              {id:this.max_content_id, title: _title, desc:_desc}
           )
