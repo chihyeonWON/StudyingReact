@@ -8,7 +8,7 @@ import './App.css';
 class App extends Component{ 
   constructor(props) {
    super(props);
-    this.max_content_id = 3;
+    this.max_content_id = 3; // id 값을 지정할 때 참고하는 정보 UI에 영향X state에 넣으면 불필요한 렌더링 발생 가능
     this.state = {
       mode:'read',
       selected_content_id: 2,
