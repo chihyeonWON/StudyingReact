@@ -21,9 +21,9 @@ class App extends Component{
        {id:3, title:'JavaScript', desc:'JavaScript is for interactive'}
       ]
    } 
- }
-  render() {
-    var _title, _desc, _article = null;
+ }  
+ getContent() {
+   var _title, _desc, _article = null;
     if(this.state.mode === 'welcome') {
       _title = this.state.welcome.title;
       _desc = this.state.welcome.desc;
@@ -78,6 +78,9 @@ class App extends Component{
           console.log(_title, _desc)
         }.bind(this)}></UpdateContent>
     }
+    return _article;
+ }
+  render() {
     return (
       <div className="App">
         <Subject 
@@ -102,7 +105,7 @@ class App extends Component{
         <Control onChangeMode = {function(_mode){
           this.setState({ mode:_mode });
         }.bind(this)}></Control>
-        {_article}
+        {this.getContent()}
       </div>
     );
   }
