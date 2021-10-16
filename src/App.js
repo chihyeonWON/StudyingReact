@@ -63,19 +63,16 @@ class App extends Component{
         }.bind(this)}></CreateContent>
     } else if (this.state.mode === 'update') {
         _content = this.getReadContent();
-        _article = <UpdateContent data = {_content} onSubmit={function(_title, _desc) {
-          // add content to this.state.contents
-          this.max_content_id = this.max_content +1;
-          /*this.state.contents.push(
-            {id:this.max_content_id, title: _title, desc:_desc}
-          );
-          this.setState({
-            contents:this.state.contents
-          })*/ 
-          //concat 함수는 인자의 내용을 _contents에 추가할 뿐 this.state.contents 본문의 내용에는 영향을 주지않는다.
-          var _contents = this.state.contents.concat(
-             {id:this.max_content_id, title: _title, desc:_desc}
-          )
+        _article = <UpdateContent data = {_content} onSubmit={
+          function(_id, _title, _desc) {
+          var _contents = Array.from(this.state.contents);
+          var i = 0;
+          while(i < _contents.length) {
+            if(_contents[i].id === _id) {
+              _contents[i] = {id:_id, title:_title, desc:_desc};
+              break;
+            }
+          }
           this.setState({
             contents:_contents
           });
