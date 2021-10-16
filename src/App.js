@@ -72,11 +72,11 @@ class App extends Component{
               _contents[i] = {id:_id, title:_title, desc:_desc};
               break;
             }
+            i += 1;
           }
           this.setState({
             contents:_contents
           });
-          console.log(_title, _desc)
         }.bind(this)}></UpdateContent>
     }
     return _article;
