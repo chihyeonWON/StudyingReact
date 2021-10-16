@@ -3,6 +3,7 @@ import Subject from './components/Subject.js';
 import TOC from './components/TOC.js';
 import ReadContent from './components/ReadContent.js';
 import CreateContent from './components/CreateContent.js';
+import UpdateContent from './components/UpdateContent.js';
 import Control from './components/Control.js';
 import './App.css';
 class App extends Component{ 
@@ -57,6 +58,25 @@ class App extends Component{
           });
           console.log(_title, _desc)
         }.bind(this)}></CreateContent>
+    } else if (this.state.mode === 'update') {
+        _article = <UpdateContent onSubmit={function(_title, _desc) {
+          // add content to this.state.contents
+          this.max_content_id = this.max_content +1;
+          /*this.state.contents.push(
+            {id:this.max_content_id, title: _title, desc:_desc}
+          );
+          this.setState({
+            contents:this.state.contents
+          })*/ 
+          //concat 함수는 인자의 내용을 _contents에 추가할 뿐 this.state.contents 본문의 내용에는 영향을 주지않는다.
+          var _contents = this.state.contents.concat(
+             {id:this.max_content_id, title: _title, desc:_desc}
+          )
+          this.setState({
+            contents:_contents
+          });
+          console.log(_title, _desc)
+        }.bind(this)}></UpdateContent>
     }
     return (
       <div className="App">
