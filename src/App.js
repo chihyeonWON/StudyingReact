@@ -75,7 +75,8 @@ class App extends Component{
             i += 1;
           }
           this.setState({
-            contents:_contents
+            contents:_contents,
+            mode:'read'
           });
         }.bind(this)}></UpdateContent>
     }
