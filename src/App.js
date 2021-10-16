@@ -22,6 +22,17 @@ class App extends Component{
       ]
    } 
  }  
+ getReadContent(){
+   var i = 0;
+      while(i < this.state.contents.length) {
+        var data = this.state.contents[i];
+        if(data.id === this.state.selected_content_id) {
+           return data; // 현재 선택된 목록의 data를 반환 this.state.contents 의 id,title,desc 사용가능
+           break;
+        }
+        i += 1;
+      } 
+ }
  getContent() {
    var _title, _desc, _article = null;
     if(this.state.mode === 'welcome') {
@@ -29,16 +40,8 @@ class App extends Component{
       _desc = this.state.welcome.desc;
       _article = <ReadContent title={_title} desc = {_desc}></ReadContent>
     } else if (this.state.mode === 'read') {
-      var i = 0;
-      while(i < this.state.contents.length) {
-        var data = this.state.contents[i];
-        if(data.id === this.state.selected_content_id) {
-          _title = data.title;
-          _desc = data.desc;
-          break;
-        }
-        i += 1;
-      } 
+      var _content  = this.getReadContent();
+      _article = <ReadContent title = {_content.title} desc = {_content.desc}></ReadContent>
     } else if (this.state.mode === 'create') {
         _article = <CreateContent onSubmit={function(_title, _desc) {
           // add content to this.state.contents
